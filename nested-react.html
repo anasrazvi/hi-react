@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello React</title>
+</head>
+<body>
+    <div>Before root</div>
+    <div id="root"></div>
+    <div>After root</div>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script>
+        /*
+        <div id='parent'>
+            <div id='child'>
+                <h1>Hello World form React!</h1>
+            </div>
+        </div>
+        */
+        const nestedHeading = React.createElement("div", {id: "parent"}, 
+            React.createElement("div", {id: "child"}, 
+                [React.createElement("h1", {id: "heading1"}, "This is h1 tag!"), React.createElement("h2", {id: "heading2"}, "This is h2 tag!")]
+            )
+        ); // heading is a react object not an html element
+        const root = ReactDOM.createRoot(document.getElementById('root')); 
+        root.render(nestedHeading); // render function converts the react objects created in above 2 lines to html elements and does the necessary DOM operation
+    </script>
+</body>
+</html>

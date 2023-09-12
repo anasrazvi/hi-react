@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello React</title>
+</head>
+<body>
+    <div id="root"></div>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script>
+        const heading = React.createElement("h1", {id: "idHeading"}, "Hello World from React!"); // heading is a react object not an html element
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        //Render removes the existing content and replaces it with heading
+        root.render(heading); // render function converts the react objects created in above 2 lines to html elements and does the necessary DOM operation
+    </script>
+</body>
+</html>
